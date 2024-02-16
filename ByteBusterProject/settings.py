@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ByteBusterApp.apps.BytebusterappConfig',
+    "accounts.apps.AccountsConfig"
 ]
 
 MIDDLEWARE = [
