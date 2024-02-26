@@ -20,6 +20,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    uihuihihih7i
-    iuhiup
-    jhuiojiou
