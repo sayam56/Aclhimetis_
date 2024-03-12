@@ -1,5 +1,5 @@
 """
-URL configuration for ByteBusterProject project.
+URL configuration for carsite project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -14,14 +14,18 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
 from django.urls import path
-from django.urls import path, include
-from django.views.generic.base import TemplateView
+from . import views
+# from .views import LabGroupMembersView, SignUpView
+
+app_name = 'ByteBusterApp'
 
 urlpatterns = [
-    path('', include('ByteBusterApp.urls', namespace='ByteBusterApp')),
-    path('admin/', admin.site.urls),
-    path("accounts/", include("accounts.urls")),
-    path("accounts/", include("django.contrib.auth.urls")),
+    path('load_template/<str:template_id>', views.load_template, name='load_template'),
+    path('', views.homepage, name='homepage'),
+    path('temp1', views.temp1, name='temp1'),
+    path('temp2', views.temp2, name='temp2'),
+    path('temp3', views.temp3, name='temp3'),
+    # path('login/', views.login_here, name='login'),
+    # path('logout/', views.logout_here, name='logout'),
 ]
