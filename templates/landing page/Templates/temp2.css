@@ -1,0 +1,79 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.pricing-section {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.pricing-table {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.pricing-plan {
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.pricing-plan:hover {
+    transform: scale(1.05);
+}
+
+.pricing-plan h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.price {
+    font-size: 28px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.pricing-plan ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.pricing-plan ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.pricing-plan button {
+    background-color: #007bff;
+    color: #f0f0f0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pricing-plan button:hover {
+    background-color: #0056b3;
+}
+
+/* Additional Styling for Premium and Ultimate Templates */
+.pricing-plan.premium {
+    /*background-color: #f0f0f0;*/
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+}
+
+.pricing-plan.ultimate {
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
