@@ -12,6 +12,10 @@ def temp1(request):
     return render(request, 'ByteBusterApp/template1.html', )
 
 
+def temp1edit(request):
+    return render(request, 'ByteBusterApp/template1editor.html', )
+
+
 def temp2(request):
     return render(request, 'ByteBusterApp/template2.html', )
 

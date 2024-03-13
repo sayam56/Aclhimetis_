@@ -23,7 +23,7 @@ document.querySelectorAll('.image-container').forEach(function(element) {
 // JS for navigating to the template view
 document.querySelector('.continue-button').addEventListener('click', function() {
     if (selectedTemplate) {
-        window.location.href = '/' + selectedTemplate;
+        window.location.href = '/' + selectedTemplate + 'editor';
     } else {
         alert('Please select a template first.');
     }

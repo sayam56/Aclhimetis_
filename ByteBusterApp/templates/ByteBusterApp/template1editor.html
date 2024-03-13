@@ -13,69 +13,132 @@
 </head>
 
 {% block content %}
-    <form id="template-form">
-    <label for="basic-name">Basic Name:</label><br>
-    <input type="text" id="basic-name" name="basic-name"><br>
-    <label for="pro-name">Pro Name:</label><br>
-    <input type="text" id="pro-name" name="pro-name"><br>
-    <label for="enterprise-name">Enterprise Name:</label><br>
-    <input type="text" id="enterprise-name" name="enterprise-name"><br>
-    <input type="submit" value="Submit">
-</form>
 
     <div class="container">
-      <h5 class="text-center pricing-table-subtitle">PRICING PLAN</h5>
-      <h1 class="text-center pricing-table-title">Pricing Table</h1>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card pricing-card pricing-plan-basic">
-            <div class="card-body">
-              <i class="mdi mdi-cube-outline pricing-plan-icon"></i>
-              <p class="pricing-plan-title">Basic</p>
-              <h3 class="pricing-plan-cost ml-auto">FREE</h3>
-              <ul class="pricing-plan-features">
-                <li>Unlimited conferences</li>
-                <li>100 participants max</li>
-                <li>Custom Hold Music</li>
-                <li>10 participants max</li>
-              </ul>
-              <a href="#!" class="btn pricing-plan-purchase-btn">Free</a>
+        <div class="flex-container ">
+            <div class="form-container scrollable">
+                <form id="basic-form">
+                    <h4>For Left Table</h4>
+                    <label for="basic-title">Title:</label><br>
+                    <input type="text" id="basic-title" name="basic-title"><br>
+                    <label for="basic-cost">Cost:</label><br>
+                    <input type="text" id="basic-cost" name="basic-cost"><br>
+                    <label for="basic-feature1">Feature 1:</label><br>
+                    <input type="text" id="basic-feature1" name="basic-feature1"><br>
+                    <label for="basic-feature2">Feature 2:</label><br>
+                    <input type="text" id="basic-feature2" name="basic-feature2"><br>
+                    <label for="basic-feature3">Feature 3:</label><br>
+                    <input type="text" id="basic-feature3" name="basic-feature3"><br>
+                    <label for="basic-feature4">Feature 4:</label><br>
+                    <input type="text" id="basic-feature4" name="basic-feature4"><br>
+                    <label for="pricing-plan-purchase-btn">Button Text:</label><br>
+                    <input type="text" id="pricing-plan-purchase-btn" name="pricing-plan-purchase-btn"><br>
+
+                    <input type="submit" value="Submit">
+                </form>
+
+                <!-- Form for the "Pro" template -->
+                <form id="pro-form">
+                    <h4>For Middle Table</h4>
+                    <label for="pro-title">Title:</label><br>
+                    <input type="text" id="pro-title" name="pro-title"><br>
+                    <label for="pro-cost">Cost:</label><br>
+                    <input type="text" id="pro-cost" name="pro-cost"><br>
+                    <label for="pro-feature1">Feature 1:</label><br>
+                    <input type="text" id="pro-feature1" name="pro-feature1"><br>
+                    <label for="pro-feature2">Feature 2:</label><br>
+                    <input type="text" id="pro-feature2" name="pro-feature2"><br>
+                    <label for="pro-feature3">Feature 3:</label><br>
+                    <input type="text" id="pro-feature3" name="pro-feature3"><br>
+                    <label for="pro-feature4">Feature 4:</label><br>
+                    <input type="text" id="pro-feature4" name="pro-feature4"><br>
+                    <label for="pro-button-text">Button Text:</label><br>
+                    <input type="text" id="pro-button-text" name="pro-button-text"><br>
+
+                    <input type="submit" value="Submit">
+                </form>
+
+                <!-- Form for the "Enterprise" template -->
+                <form id="enterprise-form">
+                    <h4>For Right Table</h4>
+                    <label for="enterprise-title">Title:</label><br>
+                    <input type="text" id="enterprise-title" name="enterprise-title"><br>
+                    <label for="enterprise-cost">Cost:</label><br>
+                    <input type="text" id="enterprise-cost" name="enterprise-cost"><br>
+                    <label for="enterprise-feature1">Feature 1:</label><br>
+                    <input type="text" id="enterprise-feature1" name="enterprise-feature1"><br>
+                    <label for="enterprise-feature2">Feature 2:</label><br>
+                    <input type="text" id="enterprise-feature2" name="enterprise-feature2"><br>
+                    <label for="enterprise-feature3">Feature 3:</label><br>
+                    <input type="text" id="enterprise-feature3" name="enterprise-feature3"><br>
+                    <label for="enterprise-feature4">Feature 4:</label><br>
+                    <input type="text" id="enterprise-feature4" name="enterprise-feature4"><br>
+                    <label for="enterprise-button-text">Button Text:</label><br>
+                    <input type="text" id="enterprise-button-text" name="enterprise-button-text"><br>
+
+
+                    <input type="submit" value="Submit">
+                </form>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card pricing-card pricing-card-highlighted  pricing-plan-pro">
-            <div class="card-body">
-                <i class="mdi mdi-trophy pricing-plan-icon"></i>
-              <p class="pricing-plan-title">Pro</p>
-              <h3 class="pricing-plan-cost ml-auto">$49</h3>
-              <ul class="pricing-plan-features">
-                <li>Unlimited conferences</li>
-                <li>100 participants max</li>
-                <li>Custom Hold Music</li>
-                <li>10 participants max</li>
-              </ul>
-              <a href="#!" class="btn pricing-plan-purchase-btn">Purchase</a>
+            <div class="table-container">
+                  <h5 class="text-center pricing-table-subtitle">PRICING PLAN</h5>
+                  <h1 class="text-center pricing-table-title">Pricing Table</h1>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="card pricing-card pricing-plan-basic">
+                        <div class="card-body">
+                          <i class="mdi mdi-cube-outline pricing-plan-icon"></i>
+                          <p class="pricing-plan-title">Basic</p>
+                          <h3 class="pricing-plan-cost ml-auto">FREE</h3>
+                          <ul class="pricing-plan-features">
+                            <li>Unlimited conferences</li>
+                            <li>100 participants max</li>
+                            <li>Custom Hold Music</li>
+                            <li>10 participants max</li>
+                          </ul>
+                          <a href="#!" class="btn pricing-plan-purchase-btn">Free</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card pricing-card pricing-card-highlighted  pricing-plan-pro">
+                        <div class="card-body">
+                            <i class="mdi mdi-trophy pricing-plan-icon"></i>
+                          <p class="pricing-plan-title">Pro</p>
+                          <h3 class="pricing-plan-cost ml-auto">$49</h3>
+                          <ul class="pricing-plan-features">
+                            <li>Unlimited conferences</li>
+                            <li>100 participants max</li>
+                            <li>Custom Hold Music</li>
+                            <li>10 participants max</li>
+                          </ul>
+                          <a href="#!" class="btn pricing-plan-purchase-btn">Purchase</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card pricing-card pricing-plan-enterprise">
+                        <div class="card-body">
+                          <i class="mdi mdi-wallet-giftcard pricing-plan-icon"></i>
+                          <p class="pricing-plan-title">Enterprise</p>
+                          <h3 class="pricing-plan-cost ml-auto">$69</h3>
+                          <ul class="pricing-plan-features">
+                            <li>Unlimited conferences</li>
+                            <li>100 participants max</li>
+                            <li>Custom Hold Music</li>
+                            <li>10 participants max</li>
+                          </ul>
+                          <a href="#!" class="btn pricing-plan-purchase-btn">Purchase</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
             </div>
-          </div>
         </div>
-        <div class="col-md-4">
-          <div class="card pricing-card pricing-plan-enterprise">
-            <div class="card-body">
-              <i class="mdi mdi-wallet-giftcard pricing-plan-icon"></i>
-              <p class="pricing-plan-title">Enterprise</p>
-              <h3 class="pricing-plan-cost ml-auto">$69</h3>
-              <ul class="pricing-plan-features">
-                <li>Unlimited conferences</li>
-                <li>100 participants max</li>
-                <li>Custom Hold Music</li>
-                <li>10 participants max</li>
-              </ul>
-              <a href="#!" class="btn pricing-plan-purchase-btn">Purchase</a>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </div>
+
+    <script type="text/javascript" src="{% static 'editor.js' %}"></script>
 
 {% endblock %}
