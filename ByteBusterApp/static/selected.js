@@ -1,5 +1,6 @@
 const imageContainers = document.querySelectorAll('.image-container');
 const leftSide = document.querySelector('.left-side');
+let selectedTemplate = null;
 
 imageContainers.forEach((container, index) => {
     container.addEventListener('click', () => {
@@ -11,12 +12,24 @@ imageContainers.forEach((container, index) => {
     });
 });
 
+// JS for loading the template into the dashboard
 document.querySelectorAll('.image-container').forEach(function(element) {
     element.addEventListener('click', function() {
-        var templateId = this.id;
-        loadTemplate(templateId);
+        selectedTemplate = this.id;
+        loadTemplate(selectedTemplate);
     });
 });
+
+// JS for navigating to the template view
+document.querySelector('.continue-button').addEventListener('click', function() {
+    if (selectedTemplate) {
+        window.location.href = '/' + selectedTemplate + 'editor';
+    } else {
+        alert('Please select a template first.');
+    }
+});
+
+// loading template function
 
 function loadTemplate(templateId) {
     var xhr = new XMLHttpRequest();
@@ -28,3 +41,4 @@ function loadTemplate(templateId) {
     };
     xhr.send();
 }
+
