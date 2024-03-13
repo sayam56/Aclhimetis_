@@ -23,9 +23,9 @@ app_name = 'ByteBusterApp'
 urlpatterns = [
     path('load_template/<str:template_id>', views.load_template, name='load_template'),
     path('', views.homepage, name='homepage'),
-    path('temp1', views.temp1, name='temp1'),
-    path('temp2', views.temp2, name='temp2'),
-    path('temp3', views.temp3, name='temp3'),
+    path('template1', views.temp1, name='template1'),
+    path('template2', views.temp2, name='template2'),
+    path('template3', views.temp3, name='template3'),
     # path('login/', views.login_here, name='login'),
     # path('logout/', views.logout_here, name='logout'),
 ]

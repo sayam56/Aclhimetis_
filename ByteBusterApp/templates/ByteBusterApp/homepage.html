@@ -4,21 +4,23 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-{% if user.is_authenticated %}
-Welcome - {{ user.username }}!
-    <p><a href="{% url 'password_change' %}">Password Change</a></p>
-    <form action="{% url 'logout' %}" method="post">
-      {% csrf_token %}
-      <button type="submit">Log Out</button>
-    </form>
-{% else %}
-{#    <p>You are not logged in</p>#}
+
     <nav class="navbar">
         <div class="logo">
             <img src="{% static 'images/logo.png' %}" alt="Bytebuster Logo">
         </div>
-{#        <button class="login-button"> Login/Sign Up</button>#}
-    <a href="{% url 'login' %}" class="login-button">Log In</a>
+
+        {% if user.is_authenticated %}
+            Welcome - {{ user.username }}!
+            {#    <p><a href="{% url 'password_change' %}">Password Change</a></p>#}
+            <form action="{% url 'logout' %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="login-button">Log Out</button>
+            </form>
+{#            <a href="{% url 'login' %}" class="login-button">Log Out</a>#}
+        {% else %}
+            <a href="{% url 'login' %}" class="login-button">Log In</a>
+        {% endif %}
     </nav>
 
     <div class="content">
@@ -59,10 +61,6 @@ Welcome - {{ user.username }}!
       </div>
 
     <script type="text/javascript" src="{% static 'selected.js' %}"></script>
-{#    <p><a href="{% url 'password_reset' %}">Password Reset</a></p>#}
-{#    <a href="{% url 'login' %}">Log In</a>#}
-{#    <a href="{% url 'signup' %}">Sign Up</a>#}
 
-{% endif %}
 {% endblock %}
 
