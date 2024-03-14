@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Users/ashikalhabib/Desktop/Pricing Screen/style.css">
+    <title>Pricing Screen</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Bytebuster Logo">
+        </div>
+        <button class="login-button">Login/Sign Up</button>
+    </nav>
+
+    <div class="content">
+      <h1>Choose Your Plan</h1>
+  </div>
+
+  <div class="new-section">
+    <div class="pricing-table">
+      
+      <div class="plan">
+        <h2>Basic</h2>
+        <div class="price">$19.99/month</div>
+        <ul class="features">
+            <li><span class="tick">✅</span> Unlimited storage</li>
+            <li><span class="tick">✅</span> 24/7 customer support</li>
+            <li><span class="cross">❌</span> Advanced analytics</li>
+            <li><span class="cross">❌</span> Priority access</li>
+        </ul>
+        <button class="choose-button">Choose Plan</button>
+      </div>
+
+      <div class="plan">
+          <h2>Pro</h2>
+          <div class="price">$39.99/month</div>
+          <ul class="features">
+              <li><span class="tick">✅</span> Unlimited storage</li>
+              <li><span class="tick">✅</span> 24/7 customer support</li>
+              <li><span class="tick">✅</span> Advanced analytics</li>
+              <li><span class="cross">❌</span> Priority access</li>
+          </ul>
+          <button class="choose-button">Choose Plan</button>
+      </div>
+
+      <div class="plan">
+          <h2>Essential</h2>
+          <div class="price">$59.99/month</div>
+          <ul class="features">
+              <li><span class="tick">✅</span> Unlimited storage</li>
+              <li><span class="tick">✅</span> 24/7 customer support</li>
+              <li><span class="tick">✅</span> Advanced analytics</li>
+              <li><span class="tick">✅</span> Priority access</li>
+          </ul>
+          <button class="choose-button">Choose Plan</button>
+      </div>
+
+    </div>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal-content">
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <p>Product A: Quantity 2, Price $25 each</p>
+            <p>Product B: Quantity 1, Price $50 each</p>
+            <p>Product C: Quantity 3, Price $15 each</p>
+            <p>Total Amount: $165</p>
+        </div>
+        <div class="payment-form">
+            <h2>Payment Details</h2>
+            <input type="text" class="card-input" placeholder="Card Number">
+            <input type="text" class="card-input" placeholder="Expiration Date">
+            <input type="text" class="card-input" placeholder="CVV">
+            <button class="pay-button">Pay Now</button>
+        </div>
+    </div>
+</div>
+
+  <!-- JavaScript to show/hide the modal -->
+  <script>
+    const modal = document.getElementById('modal');
+    const chooseButtons = document.querySelectorAll('.choose-button');
+
+    // Show the modal when a "Choose Plan" button is clicked
+    chooseButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            modal.style.display = 'block';
+        });
+    });
+
+    // Close the modal when the user clicks outside or on the close button
+    window.addEventListener('click', event => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+  </script>
+
+  </div>
+
+</body>
+</html>
