@@ -27,6 +27,8 @@ urlpatterns = [
     path('template2', views.temp2, name='template2'),
     path('template3', views.temp3, name='template3'),
     path('template1editor', views.temp1edit, name='template1editor'),
+    path('template2editor', views.temp2edit, name='template2editor'),
+    path('template3editor', views.temp3edit, name='template3editor'),
     # path('login/', views.login_here, name='login'),
     # path('logout/', views.logout_here, name='logout'),
 ]
