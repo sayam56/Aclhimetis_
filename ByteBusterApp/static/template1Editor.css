@@ -1,0 +1,146 @@
+/* Style for the left side editor */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%; /* Adjust width as needed */
+    padding: 20px;
+}
+
+/* Style for individual forms if needed */
+#basic-form, #pro-form, #enterprise-form {
+    width: 100%; /* Make forms fill container */
+    margin-bottom: 20px; /* Add some space between forms */
+}
+
+/* Style for the pricing table on the right side */
+.table-container {
+    width: 50%; /* Adjust width as needed */
+    padding: 20px;
+}
+
+.pricing-table-subtitle {
+    margin-bottom: 10px;
+}
+
+.pricing-table-title {
+    margin-bottom: 30px;
+}
+
+.pricing-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.pricing-plan-icon {
+    font-size: 48px;
+    color: #007bff;
+}
+
+.pricing-plan-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.pricing-plan-cost {
+    font-size: 36px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.pricing-plan-features {
+    list-style-type: none;
+    padding: 0;
+}
+
+.pricing-plan-features li {
+    margin-bottom: 10px;
+}
+
+.pricing-plan-purchase-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.pricing-plan-purchase-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Style for the form container */
+.form-container {
+    width: calc(100% - 40px); /* Adjust the padding */
+    max-width: 600px; /* Adjust the maximum width as needed */
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds container height */
+}
+
+/* Style for the scrollable area */
+.scrollable {
+    height: calc(100vh - 40px); /* Adjust the padding */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Style for the form titles */
+.form-container h4 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Style for form labels */
+.form-container label {
+    font-weight: bold;
+    color: #555;
+}
+
+/* Style for form inputs */
+.form-container input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+/* Hover effect for form inputs */
+.form-container input[type="text"]:hover,
+.form-container input[type="text"]:focus {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for submit buttons */
+.form-container input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for submit buttons */
+.form-container input[type="submit"]:hover {
+    background-color: #0056b3;
+}
