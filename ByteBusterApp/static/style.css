@@ -31,6 +31,26 @@ body, html {
     max-height: 40px;
 }
 
+.login-button  {
+    background-color: #4ADE80;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 16px;
+    cursor: pointer;
+    text-align: center;
+    width: 156px;
+    height: 56px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.login-button:hover{
+    text-decoration: none;
+    color: White;
+}
+
 
 .content h1 {
     font-size: 56px;
@@ -545,7 +565,7 @@ body {
     top: 280px;
     left: 50%;
     transform: translateX(-50%);
-    width: 1202px;
+    width: 90vw;
     height: 450px;
 }
 .pricing-table {
