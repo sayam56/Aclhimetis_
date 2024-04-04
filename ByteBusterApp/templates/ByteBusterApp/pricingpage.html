@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Bytebuster Logo">
+        </div>
+        <button class="login-button">Login/Sign Up</button>
+    </nav>
+
+    <div class="content">
+      <h1>Choose Your Plan</h1>
+  </div>
+
+  <div class="pricing-section">
+    <div class="pricing-table">
+
+      <div class="plan">
+        <h2>Basic</h2>
+        <div class="price">$19.99/month</div>
+        <ul class="features">
+            <li><span class="tick">✅</span> Unlimited storage</li>
+            <li><span class="tick">✅</span> 24/7 customer support</li>
+            <li><span class="cross">❌</span> Advanced analytics</li>
+            <li><span class="cross">❌</span> Priority access</li>
+        </ul>
+        <button class="choose-button">Choose Plan</button>
+      </div>
+
+      <div class="plan">
+          <h2>Pro</h2>
+          <div class="price">$39.99/month</div>
+          <ul class="features">
+              <li><span class="tick">✅</span> Unlimited storage</li>
+              <li><span class="tick">✅</span> 24/7 customer support</li>
+              <li><span class="tick">✅</span> Advanced analytics</li>
+              <li><span class="cross">❌</span> Priority access</li>
+          </ul>
+          <button class="choose-button">Choose Plan</button>
+      </div>
+
+      <div class="plan">
+          <h2>Essential</h2>
+          <div class="price">$59.99/month</div>
+          <ul class="features">
+              <li><span class="tick">✅</span> Unlimited storage</li>
+              <li><span class="tick">✅</span> 24/7 customer support</li>
+              <li><span class="tick">✅</span> Advanced analytics</li>
+              <li><span class="tick">✅</span> Priority access</li>
+          </ul>
+          <button class="choose-button">Choose Plan</button>
+      </div>
+
+  </div>
+
+  </div>
+
+{% endblock %}
