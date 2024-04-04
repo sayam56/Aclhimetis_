@@ -36,6 +36,14 @@ def pricingpage(request):
     return render(request, 'ByteBusterApp/pricingpage.html', )
 
 
+def paymentsuccess(request):
+    return render(request, 'ByteBusterApp/paymentsuccess.html', )
+
+
+def paymentfailed(request):
+    return render(request, 'ByteBusterApp/paymentfailed.html', )
+
+
 def load_template(request, template_id):
     template_name = 'ByteBusterApp/' + template_id + '.html'
     html = render_to_string(template_name, request=request)

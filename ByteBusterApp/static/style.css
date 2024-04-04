@@ -647,3 +647,50 @@ body {
 }
 
 
+
+/*Payment success Screen CSS*/
+.center-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+.icon-image {
+        width: 80px;
+        height: 80px;
+        /* Add any other styles for the icon image here */
+    }
+
+    .successtitle, .sucesssubtitle {
+        color: #0F172A;
+        font-weight: 600;
+        font-size: 20px;
+        font-family: 'Inter', sans-serif;
+        text-align: center;
+    }
+
+    .bg-image2 {
+    height: 100vh;
+    background-image: url("images/bg-2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+.bg-image2::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(63, 69, 85, 0.5); /* Customize the color here */
+    filter: blur(8px);
+    z-index: -1; /* Place the overlay behind other content */
+}
+
+
