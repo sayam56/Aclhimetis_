@@ -20,7 +20,6 @@ document.querySelector('#basic-form').addEventListener('submit', function(event)
     document.querySelector('.pricing-plan-basic .pricing-plan-purchase-btn').textContent = basicButton;
 });
 
-
 // Event listener for the "Pro" form
 document.querySelector('#pro-form').addEventListener('submit', function(event) {
     // Prevent the form from being submitted normally
@@ -65,5 +64,59 @@ document.querySelector('#enterprise-form').addEventListener('submit', function(e
     document.querySelector('.pricing-plan-enterprise .pricing-plan-features li:nth-child(3)').textContent = enterpriseFeature3;
     document.querySelector('.pricing-plan-enterprise .pricing-plan-features li:nth-child(4)').textContent = enterpriseFeature4;
     document.querySelector('.pricing-plan-enterprise .pricing-plan-purchase-btn').textContent = enterpriseButtonText;
+});
+
+// Event listener for the table slider
+document.querySelector('#table-slider').addEventListener('input', function(event) {
+    const numTables = event.target.value;
+
+    // Get all the tables and forms
+    const tables = document.querySelectorAll('.pricing-card');
+    const forms = document.querySelectorAll('form');
+
+    // Hide all tables and forms initially
+    tables.forEach(table => table.style.display = 'none');
+    forms.forEach(form => form.style.display = 'none');
+
+    // Then show the number of tables and forms selected by the slider
+    for (let i = 0; i < numTables; i++) {
+        tables[i].style.display = 'block';
+        forms[i].style.display = 'block';
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const getCodeButton = document.getElementById('get-code');
+
+  getCodeButton.addEventListener('click', function (event) {
+    // Prevent default navigation behavior
+    event.preventDefault();
+
+    // Check if all forms are filled
+    if (areFormsFilled()) {
+      // If forms are filled, allow navigation
+      window.location.href = getCodeButton.href;
+    } else {
+      // If forms are not filled, display a message
+      alert('Please fill in all forms before getting the code.');
+    }
+  });
+
+  function areFormsFilled() {
+    // Get all forms
+    const forms = document.querySelectorAll('form');
+
+    // Check if all forms are filled
+    for (const form of forms) {
+      const inputs = form.querySelectorAll('input[type="text"]');
+      for (const input of inputs) {
+        if (!input.value.trim()) {
+          return false; // If any input is empty, return false
+        }
+      }
+    }
+
+    return true; // If all inputs are filled, return true
+  }
 });
 
