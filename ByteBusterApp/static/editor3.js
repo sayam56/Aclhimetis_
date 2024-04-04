@@ -79,3 +79,22 @@ document.querySelector('#enterprise-form').addEventListener('submit', function(e
     document.querySelector('.enterprise .enterprise_feature_6').textContent = enterpriseFeature6;
     document.querySelector('.enterprise .card__button').textContent = enterpriseButtonText;
 });
+
+
+document.querySelector('#table-slider3').addEventListener('input', function(event) {
+    const numTables = event.target.value;
+
+    // Get all the tables and forms
+    const tables = document.querySelectorAll('.card__content');
+    const forms = document.querySelectorAll('form');
+
+    // Hide all tables and forms initially
+    tables.forEach(table => table.style.display = 'none');
+    forms.forEach(form => form.style.display = 'none');
+
+    // Then show the number of tables and forms selected by the slider
+    for (let i = 0; i < numTables; i++) {
+        tables[i].style.display = 'block';
+        forms[i].style.display = 'block';
+    }
+});
