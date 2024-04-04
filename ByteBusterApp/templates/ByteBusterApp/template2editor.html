@@ -46,21 +46,21 @@
                 <form id="hobby-form">
                     <h4>For Left Table</h4>
                     <label for="hobby-title">Title:</label><br>
-                    <input type="text" id="hobby-title" name="hobby-title"><br>
+                    <input type="text" id="hobby-title" name="hobby-title" required><br>
                     <label for="hobby-cost">Cost:</label><br>
-                    <input type="text" id="hobby-cost" name="hobby-cost"><br>
+                    <input type="text" id="hobby-cost" name="hobby-cost" required><br>
                     <label for="hobby-feature1">Feature 1:</label><br>
-                    <input type="text" id="hobby-feature1" name="hobby-feature1"><br>
+                    <input type="text" id="hobby-feature1" name="hobby-feature1" required><br>
                     <label for="hobby-feature2">Feature 2:</label><br>
-                    <input type="text" id="hobby-feature2" name="hobby-feature2"><br>
+                    <input type="text" id="hobby-feature2" name="hobby-feature2" required><br>
                     <label for="hobby-feature3">Feature 3:</label><br>
-                    <input type="text" id="hobby-feature3" name="hobby-feature3"><br>
+                    <input type="text" id="hobby-feature3" name="hobby-feature3" required><br>
                     <label for="hobby-feature4">Feature 4:</label><br>
-                    <input type="text" id="hobby-feature4" name="hobby-feature4"><br>
+                    <input type="text" id="hobby-feature4" name="hobby-feature4" required><br>
                     <label for="hobby-button-text">Button Text:</label><br>
                     <input type="text" id="hobby-button-text" name="hobby-button-text"><br>
 
-                    <input type="submit" value="Submit" class="login-button">
+                    <input type="submit" value="Update" class="login-button">
                 </form>
 
 
@@ -68,44 +68,44 @@
                 <form id="expert-form">
                     <h4>For Middle Table</h4>
                     <label for="expert-tag">Tag:</label><br>
-                    <input type="text" id="expert-tag" name="expert-tag"><br>
+                    <input type="text" id="expert-tag" name="expert-tag" required><br>
                     <label for="expert-title">Title:</label><br>
-                    <input type="text" id="expert-title" name="expert-title"><br>
+                    <input type="text" id="expert-title" name="expert-title" required><br>
                     <label for="expert-cost">Cost:</label><br>
-                    <input type="text" id="expert-cost" name="expert-cost"><br>
+                    <input type="text" id="expert-cost" name="expert-cost" required><br>
                     <label for="expert-feature1">Feature 1:</label><br>
-                    <input type="text" id="expert-feature1" name="expert-feature1"><br>
+                    <input type="text" id="expert-feature1" name="expert-feature1" required><br>
                     <label for="expert-feature2">Feature 2:</label><br>
-                    <input type="text" id="expert-feature2" name="expert-feature2"><br>
+                    <input type="text" id="expert-feature2" name="expert-feature2" required><br>
                     <label for="expert-feature3">Feature 3:</label><br>
-                    <input type="text" id="expert-feature3" name="expert-feature3"><br>
+                    <input type="text" id="expert-feature3" name="expert-feature3" required><br>
                     <label for="expert-feature4">Feature 4:</label><br>
-                    <input type="text" id="expert-feature4" name="expert-feature4"><br>
+                    <input type="text" id="expert-feature4" name="expert-feature4" required><br>
                     <label for="expert-button-text">Button Text:</label><br>
                     <input type="text" id="expert-button-text" name="expert-button-text"><br>
 
-                    <input type="submit" value="Submit" class="login-button">
+                    <input type="submit" value="Update" class="login-button">
                 </form>
 
                 <!-- Form for the "Business" template -->
                 <form id="business-form">
                     <h4>For Right Table</h4>
                     <label for="business-title">Title:</label><br>
-                    <input type="text" id="business-title" name="business-title"><br>
+                    <input type="text" id="business-title" name="business-title" required><br>
                     <label for="business-cost">Cost:</label><br>
-                    <input type="text" id="business-cost" name="business-cost"><br>
+                    <input type="text" id="business-cost" name="business-cost" required><br>
                     <label for="business-feature1">Feature 1:</label><br>
-                    <input type="text" id="business-feature1" name="business-feature1"><br>
+                    <input type="text" id="business-feature1" name="business-feature1" required><br>
                     <label for="business-feature2">Feature 2:</label><br>
-                    <input type="text" id="business-feature2" name="business-feature2"><br>
+                    <input type="text" id="business-feature2" name="business-feature2" required><br>
                     <label for="business-feature3">Feature 3:</label><br>
-                    <input type="text" id="business-feature3" name="business-feature3"><br>
+                    <input type="text" id="business-feature3" name="business-feature3" required><br>
                     <label for="business-feature4">Feature 4:</label><br>
-                    <input type="text" id="business-feature4" name="business-feature4"><br>
+                    <input type="text" id="business-feature4" name="business-feature4" required><br>
                     <label for="business-button-text">Button Text:</label><br>
                     <input type="text" id="business-button-text" name="business-button-text"><br>
 
-                    <input type="submit" value="Submit" class="login-button">
+                    <input type="submit" value="Update" class="login-button">
                 </form>
 
 
@@ -338,6 +338,8 @@
             </div>
         </div>
     </div>
+        <a href="{% url 'ByteBusterApp:pricingpage' %}" class="login-button get-code" id="get-code">Get Code</a>
+
 </section>
 </body>
 <script type="text/javascript" src="{% static 'editor2.js' %}"></script>

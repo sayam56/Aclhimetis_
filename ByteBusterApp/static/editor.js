@@ -84,3 +84,39 @@ document.querySelector('#table-slider').addEventListener('input', function(event
         forms[i].style.display = 'block';
     }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const getCodeButton = document.getElementById('get-code');
+
+  getCodeButton.addEventListener('click', function (event) {
+    // Prevent default navigation behavior
+    event.preventDefault();
+
+    // Check if all forms are filled
+    if (areFormsFilled()) {
+      // If forms are filled, allow navigation
+      window.location.href = getCodeButton.href;
+    } else {
+      // If forms are not filled, display a message
+      alert('Please fill in all forms before getting the code.');
+    }
+  });
+
+  function areFormsFilled() {
+    // Get all forms
+    const forms = document.querySelectorAll('form');
+
+    // Check if all forms are filled
+    for (const form of forms) {
+      const inputs = form.querySelectorAll('input[type="text"]');
+      for (const input of inputs) {
+        if (!input.value.trim()) {
+          return false; // If any input is empty, return false
+        }
+      }
+    }
+
+    return true; // If all inputs are filled, return true
+  }
+});
+

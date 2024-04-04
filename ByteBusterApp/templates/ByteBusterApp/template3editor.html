@@ -59,7 +59,7 @@
                         <label for="basic-button-text">Button Text:</label><br>
                         <input type="text" id="basic-button-text" name="basic-button-text" required><br>
 
-                        <input type="submit" value="Submit" class="login-button">
+                        <input type="submit" value="Update" class="login-button">
                     </form>
 
                     <!-- Form for the "Professional" template -->
@@ -84,7 +84,7 @@
                         <label for="professional-button-text">Button Text:</label><br>
                         <input type="text" id="professional-button-text" name="professional-button-text" required><br>
 
-                        <input type="submit" value="Submit" class="login-button">
+                        <input type="submit" value="Update" class="login-button">
                     </form>
 
                     <!-- Form for the "Enterprise" template -->
@@ -111,7 +111,7 @@
                         <label for="enterprise-button-text">Button Text:</label><br>
                         <input type="text" id="enterprise-button-text" name="enterprise-button-text" required><br>
 
-                        <input type="submit" value="Submit" class="login-button">
+                        <input type="submit" value="Update" class="login-button">
                     </form>
 
 
@@ -249,7 +249,10 @@
 
             </div>
         </div>
+
     </div>
+
+    <a href="{% url 'ByteBusterApp:pricingpage' %}" class="login-button get-code" id="get-code">Get Code</a>
 
     </section>
 <script type="text/javascript" src="{% static 'editor3.js' %}"></script>
