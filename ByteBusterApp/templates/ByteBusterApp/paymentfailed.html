@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Payment Failed{% endblock %}
+
+{% block content %}
+    <div class="bg-image2"></div>
+        <div class="login-container center-screen">
+            <div class="center-content">
+                <img src="{% static 'images/error.png' %}" alt="Payment Failed Icon" class="icon-image">
+                <h2 class="successtitle" style="margin-top: 24px" >Sorry!</h2>
+                <h3 class="sucesssubtitle">Your Payment is Unsuccessful</h3>
+                <a href="{% url 'ByteBusterApp:pricingpage' %}" class="login-button btn-block" style="margin-top: 24px" >Retry</a>
+            </div>
+        </div>
+
+{% endblock %}
