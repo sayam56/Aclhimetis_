@@ -292,7 +292,9 @@ body, html {
 /*template 1 css*/
 .flex-container {
     display: flex;
-
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
 }
 
 .form-container {
@@ -301,10 +303,25 @@ body, html {
 }
 
 .table-container {
-    flex: 2;
+    flex: 4;
     /*sayam: not working*/
     width: 100%; !important;
     max-width: 1140px; !important;
+}
+
+.form-container{
+    background-color: #0F172A;
+    border-radius: 20px 20px 20px 20px;
+    top: 0;
+    left: 30%;
+    width: 350px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    color: white;
 }
 
 .form-container.scrollable {

@@ -10,7 +10,7 @@
         <form method="post" class="login-form">
             {% csrf_token %}
             {{ form }}
-            <a href="{% url 'password_reset' %}" class="forgotPass">Forgot Password?</a>
+{#            <a href="{% url 'password_reset' %}" class="forgotPass">Forgot Password?</a>#}
             <button type="submit" class="btn btn-success btn-block signup-btn">Sign Up</button>
 
             <div class="modalBottom">

@@ -21,8 +21,25 @@
 
 
 <body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Bytebuster Logo">
+        </div>
+
+        {% if user.is_authenticated %}
+            Welcome - {{ user.username }}!
+            {#    <p><a href="{% url 'password_change' %}">Password Change</a></p>#}
+            <form action="{% url 'logout' %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="login-button">Log Out</button>
+            </form>
+{#            <a href="{% url 'login' %}" class="login-button">Log Out</a>#}
+        {% else %}
+            <a href="{% url 'login' %}" class="login-button">Log In</a>
+        {% endif %}
+    </nav>
 <section>
-    <div class="container">
+    <div class="container" style="max-width: 1900px;">
         <div class="flex-container">
             <div class="form-container scrollable">
                <!-- Form for the "Hobby" template -->
@@ -43,7 +60,7 @@
                     <label for="hobby-button-text">Button Text:</label><br>
                     <input type="text" id="hobby-button-text" name="hobby-button-text"><br>
 
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" class="login-button">
                 </form>
 
 
@@ -67,7 +84,7 @@
                     <label for="expert-button-text">Button Text:</label><br>
                     <input type="text" id="expert-button-text" name="expert-button-text"><br>
 
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" class="login-button">
                 </form>
 
                 <!-- Form for the "Business" template -->
@@ -88,7 +105,7 @@
                     <label for="business-button-text">Button Text:</label><br>
                     <input type="text" id="business-button-text" name="business-button-text"><br>
 
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" class="login-button">
                 </form>
 
 

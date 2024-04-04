@@ -13,12 +13,30 @@
 </head>
 
 {% block content %}
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Bytebuster Logo">
+        </div>
 
-    <div class="container">
+        {% if user.is_authenticated %}
+            Welcome - {{ user.username }}!
+            {#    <p><a href="{% url 'password_change' %}">Password Change</a></p>#}
+            <form action="{% url 'logout' %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="login-button">Log Out</button>
+            </form>
+{#            <a href="{% url 'login' %}" class="login-button">Log Out</a>#}
+        {% else %}
+            <a href="{% url 'login' %}" class="login-button">Log In</a>
+        {% endif %}
+    </nav>
+    <div class="container" style="max-width: 1900px;">
         <div class="flex-container ">
             <div class="form-container scrollable">
+                <label for="table-slider">Number of Tables:</label><br>
+                <input type="range" id="table-slider" name="table-slider" min="1" max="3" value="3">
                 <form id="basic-form">
-                    <h4>For Left Table</h4>
+                    <h4>First Table</h4>
                     <label for="basic-title">Title:</label><br>
                     <input type="text" id="basic-title" name="basic-title"><br>
                     <label for="basic-cost">Cost:</label><br>
@@ -34,12 +52,12 @@
                     <label for="pricing-plan-purchase-btn">Button Text:</label><br>
                     <input type="text" id="pricing-plan-purchase-btn" name="pricing-plan-purchase-btn"><br>
 
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" class="login-button">
                 </form>
 
                 <!-- Form for the "Pro" template -->
                 <form id="pro-form">
-                    <h4>For Middle Table</h4>
+                    <h4>Second Table</h4>
                     <label for="pro-title">Title:</label><br>
                     <input type="text" id="pro-title" name="pro-title"><br>
                     <label for="pro-cost">Cost:</label><br>
@@ -55,12 +73,12 @@
                     <label for="pro-button-text">Button Text:</label><br>
                     <input type="text" id="pro-button-text" name="pro-button-text"><br>
 
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" class="login-button">
                 </form>
 
                 <!-- Form for the "Enterprise" template -->
                 <form id="enterprise-form">
-                    <h4>For Right Table</h4>
+                    <h4>Third Table</h4>
                     <label for="enterprise-title">Title:</label><br>
                     <input type="text" id="enterprise-title" name="enterprise-title"><br>
                     <label for="enterprise-cost">Cost:</label><br>
@@ -77,11 +95,12 @@
                     <input type="text" id="enterprise-button-text" name="enterprise-button-text"><br>
 
 
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" class="login-button">
                 </form>
             </div>
+
             <div class="table-container">
-                  <h5 class="text-center pricing-table-subtitle">PRICING PLAN</h5>
+                  <h5 class="text-center pricing-table-subtitle"></h5>
                   <h1 class="text-center pricing-table-title">Pricing Table</h1>
                   <div class="row">
                     <div class="col-md-4">
