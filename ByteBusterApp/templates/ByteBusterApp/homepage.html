@@ -56,10 +56,9 @@
           </div>
 
           <button class="continue-button">Continue</button>
-
+            {{ paypal_payment.render }}
         </div>
       </div>
-
     <script type="text/javascript" src="{% static 'selected.js' %}"></script>
 
 {% endblock %}

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ByteBusterApp.apps.BytebusterappConfig',
     "accounts.apps.AccountsConfig",
+    "paypal.standard.ipn"
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,6 @@ LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+PAYPAL_RECEIVER_EMAIL = "<EMAIL>"
+PAYPAL_TEST = True

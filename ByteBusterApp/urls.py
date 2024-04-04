@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.urls import path
 from . import views
+from .views import edit_template
+
 # from .views import LabGroupMembersView, SignUpView
 
 app_name = 'ByteBusterApp'
@@ -29,4 +31,5 @@ urlpatterns = [
     path('template1editor', views.temp1edit, name='template1editor'),
     # path('login/', views.login_here, name='login'),
     # path('logout/', views.logout_here, name='logout'),
+    path('template_editor/', edit_template, name='edit_template'),
 ]
