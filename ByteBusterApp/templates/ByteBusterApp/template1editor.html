@@ -15,7 +15,9 @@
 {% block content %}
     <nav class="navbar">
         <div class="logo">
-            <img src="{% static 'images/logo.png' %}" alt="Bytebuster Logo">
+            <a href="{% url 'ByteBusterApp:homepage' %}">
+                <img src="{% static 'images/logo.png' %}" alt="Bytebuster Logo">
+            </a>
         </div>
 
         {% if user.is_authenticated %}

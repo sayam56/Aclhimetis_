@@ -32,6 +32,7 @@ urlpatterns = [
     path('pricing', views.pricingpage, name='pricingpage'),
     path('paymentsuccess', views.paymentsuccess, name='paymentsuccess'),
     path('paymentfailed', views.paymentfailed, name='paymentfailed'),
+    path('dashboard', views.dashboard, name='dashboard'),
     # path('login/', views.login_here, name='login'),
     # path('logout/', views.logout_here, name='logout'),
 ]

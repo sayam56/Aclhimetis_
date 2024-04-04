@@ -44,6 +44,10 @@ def paymentfailed(request):
     return render(request, 'ByteBusterApp/paymentfailed.html', )
 
 
+def dashboard(request):
+    return render(request, 'ByteBusterApp/dashboard.html', )
+
+
 def load_template(request, template_id):
     template_name = 'ByteBusterApp/' + template_id + '.html'
     html = render_to_string(template_name, request=request)

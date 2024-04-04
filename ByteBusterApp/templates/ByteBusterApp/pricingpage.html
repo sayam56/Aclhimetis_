@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Pricing{% endblock %}
 
 {% block content %}
     <nav class="navbar">
         <div class="logo">
-            <img src="{% static 'images/logo.png' %}" alt="Bytebuster Logo">
+            <a href="{% url 'ByteBusterApp:homepage' %}">
+                <img src="{% static 'images/logo.png' %}" alt="Bytebuster Logo">
+            </a>
         </div>
 
         {% if user.is_authenticated %}
@@ -23,44 +25,45 @@
     </nav>
 
     <div class="content">
-      <h1>Choose Your Plan</h1>
-  </div>
+        <h1>Choose Your Plan</h1>
+        <h2>Start using Pricing Table for free and decide which plan is right for you later</h2>
+    </div>
 
-  <div class="pricing-section">
+  <div class="pricing-section" style="margin-top: 40px">
     <div class="pricing-table">
 
       <div class="plan">
-        <h2>Basic</h2>
-        <div class="price">$19.99/month</div>
+        <h2>Free</h2>
+        <div class="price">$0/month</div>
         <ul class="features">
-            <li><span class="tick">✅</span> Unlimited storage</li>
-            <li><span class="tick">✅</span> 24/7 customer support</li>
-            <li><span class="cross">❌</span> Advanced analytics</li>
-            <li><span class="cross">❌</span> Priority access</li>
+            <li><b>1 Widget</b></li>
+            <li>Only Bug Fixes</li>
+            <li><del>Free Installation Service</del></li>
+            <li>100% Ad Free</li>
         </ul>
         <button class="choose-button">Choose Plan</button>
       </div>
 
       <div class="plan">
-          <h2>Pro</h2>
-          <div class="price">$39.99/month</div>
+          <h2>Basic</h2>
+          <div class="price">$5/month</div>
           <ul class="features">
-              <li><span class="tick">✅</span> Unlimited storage</li>
-              <li><span class="tick">✅</span> 24/7 customer support</li>
-              <li><span class="tick">✅</span> Advanced analytics</li>
-              <li><span class="cross">❌</span> Priority access</li>
+              <li><b>3 Widgets</b></li>
+              <li>Basic Support</li>
+              <li>Free Installation Service</li>
+              <li>100% Ad Free</li>
           </ul>
           <button class="choose-button">Choose Plan</button>
       </div>
 
       <div class="plan">
-          <h2>Essential</h2>
-          <div class="price">$59.99/month</div>
+          <h2>Pro</h2>
+          <div class="price">$10/month</div>
           <ul class="features">
-              <li><span class="tick">✅</span> Unlimited storage</li>
-              <li><span class="tick">✅</span> 24/7 customer support</li>
-              <li><span class="tick">✅</span> Advanced analytics</li>
-              <li><span class="tick">✅</span> Priority access</li>
+              <li><b>9 Widgets</b></li>
+              <li>Priority Support</li>
+              <li>Free Installation Service</li>
+              <li>100% Ad Free</li>
           </ul>
           <button class="choose-button">Choose Plan</button>
       </div>
