@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Bytebuster Logo">
+        </div>
+
+        {% if user.is_authenticated %}
+            Welcome - {{ user.username }}!
+            {#    <p><a href="{% url 'password_change' %}">Password Change</a></p>#}
+            <form action="{% url 'logout' %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="login-button" style="text-decoration: none;">Log Out</button>
+            </form>
+{#            <a href="{% url 'login' %}" class="login-button">Log Out</a>#}
+        {% else %}
+            <a href="{% url 'login' %}" class="login-button">Log In</a>
+        {% endif %}
+    </nav>
+
+    <div class="content">
+      <h1>Choose Your Plan</h1>
+  </div>
+
+  <div class="pricing-section">
+    <div class="pricing-table">
+
+      <div class="plan">
+        <h2>Basic</h2>
+        <div class="price">$19.99/month</div>
+        <ul class="features">
+            <li><span class="tick">✅</span> Unlimited storage</li>
+            <li><span class="tick">✅</span> 24/7 customer support</li>
+            <li><span class="cross">❌</span> Advanced analytics</li>
+            <li><span class="cross">❌</span> Priority access</li>
+        </ul>
+        <button class="choose-button">Choose Plan</button>
+      </div>
+
+      <div class="plan">
+          <h2>Pro</h2>
+          <div class="price">$39.99/month</div>
+          <ul class="features">
+              <li><span class="tick">✅</span> Unlimited storage</li>
+              <li><span class="tick">✅</span> 24/7 customer support</li>
+              <li><span class="tick">✅</span> Advanced analytics</li>
+              <li><span class="cross">❌</span> Priority access</li>
+          </ul>
+          <button class="choose-button">Choose Plan</button>
+      </div>
+
+      <div class="plan">
+          <h2>Essential</h2>
+          <div class="price">$59.99/month</div>
+          <ul class="features">
+              <li><span class="tick">✅</span> Unlimited storage</li>
+              <li><span class="tick">✅</span> 24/7 customer support</li>
+              <li><span class="tick">✅</span> Advanced analytics</li>
+              <li><span class="tick">✅</span> Priority access</li>
+          </ul>
+          <button class="choose-button">Choose Plan</button>
+      </div>
+
+  </div>
+
+  </div>
+
+{% endblock %}

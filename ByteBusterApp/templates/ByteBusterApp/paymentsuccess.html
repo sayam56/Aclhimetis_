@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Payment Successful{% endblock %}
+
+{% block content %}
+    <div class="bg-image2"></div>
+        <div class="login-container center-screen">
+            <div class="center-content">
+                <img src="{% static 'images/success.png' %}" alt="Payment Success Icon" class="icon-image">
+                <h2 class="successtitle" style="margin-top: 24px" >Thank you!</h2>
+                <h3 class="sucesssubtitle">Your Payment is Successful</h3>
+                <a href="{% url 'ByteBusterApp:homepage' %}" class="login-button btn-block" style="margin-top: 24px" >Go to Dashboard</a>
+            </div>
+        </div>
+
+{% endblock %}

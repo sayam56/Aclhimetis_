@@ -20,7 +20,6 @@ document.querySelector('#basic-form').addEventListener('submit', function(event)
     document.querySelector('.pricing-plan-basic .pricing-plan-purchase-btn').textContent = basicButton;
 });
 
-
 // Event listener for the "Pro" form
 document.querySelector('#pro-form').addEventListener('submit', function(event) {
     // Prevent the form from being submitted normally
@@ -67,3 +66,21 @@ document.querySelector('#enterprise-form').addEventListener('submit', function(e
     document.querySelector('.pricing-plan-enterprise .pricing-plan-purchase-btn').textContent = enterpriseButtonText;
 });
 
+// Event listener for the table slider
+document.querySelector('#table-slider').addEventListener('input', function(event) {
+    const numTables = event.target.value;
+
+    // Get all the tables and forms
+    const tables = document.querySelectorAll('.pricing-card');
+    const forms = document.querySelectorAll('form');
+
+    // Hide all tables and forms initially
+    tables.forEach(table => table.style.display = 'none');
+    forms.forEach(form => form.style.display = 'none');
+
+    // Then show the number of tables and forms selected by the slider
+    for (let i = 0; i < numTables; i++) {
+        tables[i].style.display = 'block';
+        forms[i].style.display = 'block';
+    }
+});
