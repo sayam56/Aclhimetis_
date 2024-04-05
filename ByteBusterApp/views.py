@@ -37,23 +37,30 @@ def homepage(request):
 
     return render(request, 'ByteBusterApp/homepage.html' , {'detail': detail})
 
+
 def temp1(request):
     return render(request, 'ByteBusterApp/template1.html')
+
 
 def temp1edit(request):
     return render(request, 'ByteBusterApp/template1editor.html')
 
+
 def temp2(request):
     return render(request, 'ByteBusterApp/template2.html')
+
 
 def temp2edit(request):
     return render(request, 'ByteBusterApp/template2editor.html')
 
+
 def temp3(request):
     return render(request, 'ByteBusterApp/template3.html')
 
+
 def temp3edit(request):
     return render(request, 'ByteBusterApp/template3editor.html')
+
 
 @login_required
 def pricingpage(request):
@@ -71,10 +78,7 @@ def pricingpage(request):
     paypal_payment = PayPalPaymentsForm(initial=paypal_checkout)
 
     return render(request, 'ByteBusterApp/pricingpage.html',{'paypal_payment' : paypal_payment})
-    # Get the latest PricingTable object for the current user
-    pricing_table = PricingTable.objects.filter(user=request.user).latest('id')
 
-    return render(request, 'ByteBusterApp/pricingpage.html', {'pricing_table': pricing_table})
 
 
 @login_required
@@ -85,9 +89,11 @@ def paymentsuccess(request):
     paymentdone.save()
     return render(request, 'ByteBusterApp/paymentsuccess.html')
 
+
 @login_required
 def paymentfailed(request):
     return render(request, 'ByteBusterApp/paymentfailed.html')
+
 
 def load_template(request, template_id):
     template_name = 'ByteBusterApp/' + template_id + '.html'
