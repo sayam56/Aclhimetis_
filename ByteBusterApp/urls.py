@@ -34,9 +34,8 @@ urlpatterns = [
     path('pricing', views.pricingpage, name='pricingpage'),
     path('paymentsuccess', views.paymentsuccess, name='paymentsuccess'),
     path('paymentfailed', views.paymentfailed, name='paymentfailed'),
-    # path('save_zip_to_db/', views.save_zip_to_db, name='save_zip_to_db'),
-    # path('download_zip', views.download_zip, name='download_zip'),
-    # path('admin/download_zip/<int:id>', views.download_zip, name='download_zip'),
+
+    path('dashboard', views.dashboard, name='dashboard'),
     # path('login/', views.login_here, name='login'),
     # path('logout/', views.logout_here, name='logout'),
     path('template_editor/', edit_template, name='edit_template'),
