@@ -65,7 +65,7 @@ def pricingpage(request):
     host = request.get_host()
     paypal_checkout = {
         'business': settings.PAYPAL_RECEIVER_EMAIL,
-        'amount': 39.99,
+        'amount': 10,
         'invoice': uuid.uuid4(),
         'currency_code': 'CAD',
         'notify_url': f"http://{host}:{reverse('paypal-ipn')}",
