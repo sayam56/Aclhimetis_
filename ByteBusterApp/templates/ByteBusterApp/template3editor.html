@@ -252,7 +252,9 @@
 
     </div>
 
-    <a href="{% url 'ByteBusterApp:pricingpage' %}" class="login-button get-code" id="get-code">Get Code</a>
+    {% if user.is_authenticated %}
+            <a href="{% url 'ByteBusterApp:template1editor' %}" class="login-button get-code" id="get-code">Get Code</a>
+    {% endif %}
 
     </section>
 <script type="text/javascript" src="{% static 'editor3.js' %}"></script>

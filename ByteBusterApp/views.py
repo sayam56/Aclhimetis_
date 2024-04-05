@@ -10,9 +10,6 @@ from paypal.standard.forms import PayPalPaymentsForm
 from django.conf import settings
 import  uuid
 from django.urls import reverse
-# Create your views here.
-
-# template_editor/views.py
 from django.shortcuts import render
 from django.template.loader import render_to_string
 from .forms import TemplateForm
@@ -35,8 +32,8 @@ def edit_template(request):
 
 def homepage(request):
     detail = ''
-    if(request.user):
-            detail = payment.objects.get(userid=request.user)
+    if request.user.is_authenticated:
+        detail = payment.objects.get(userid=request.user)
 
     return render(request, 'ByteBusterApp/homepage.html' , {'detail': detail})
 
