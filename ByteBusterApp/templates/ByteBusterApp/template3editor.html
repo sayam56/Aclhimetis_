@@ -35,12 +35,12 @@
 
     <div class="container-editor">
         <div class="flex-container">
-            <div class="form-container scrollable">
+            <div class="form-container scrollable" style="width: 800px;">
                 <label for="table-slider3">Number of Tables:</label><br>
                 <input type="range" id="table-slider3" name="table-slider3" min="1" max="3" value="3">
 
                 <!-- Form for the "Basic" template -->
-                    <form id="basic-form">
+                    <form id="basic-form" style="width: 80%">
                         <h4>For Basic Table</h4>
                         <label for="basic-name">Plan Name:</label><br>
                         <input type="text" id="basic-name" name="basic-name" required><br>
@@ -59,11 +59,11 @@
                         <label for="basic-button-text">Button Text:</label><br>
                         <input type="text" id="basic-button-text" name="basic-button-text" required><br>
 
-                        <input type="submit" value="Update" class="login-button">
+                        <input type="submit" value="Update" class="login-button" style="margin-left: 130px;">
                     </form>
 
                     <!-- Form for the "Professional" template -->
-                    <form id="professional-form">
+                    <form id="professional-form" style="width: 80%">
                         <h4>For Professional Table</h4>
                         <label for="professional-name">Plan Name:</label><br>
                         <input type="text" id="professional-name" name="professional-name" required><br>
@@ -84,11 +84,11 @@
                         <label for="professional-button-text">Button Text:</label><br>
                         <input type="text" id="professional-button-text" name="professional-button-text" required><br>
 
-                        <input type="submit" value="Update" class="login-button">
+                        <input type="submit" value="Update" class="login-button" style="margin-left: 130px;">
                     </form>
 
                     <!-- Form for the "Enterprise" template -->
-                    <form id="enterprise-form">
+                    <form id="enterprise-form" style="width: 80%">
                         <h4>For Enterprise Table</h4>
                         <label for="enterprise-name">Plan Name:</label><br>
                         <input type="text" id="enterprise-name" name="enterprise-name" required><br>
@@ -111,7 +111,7 @@
                         <label for="enterprise-button-text">Button Text:</label><br>
                         <input type="text" id="enterprise-button-text" name="enterprise-button-text" required><br>
 
-                        <input type="submit" value="Update" class="login-button">
+                        <input type="submit" value="Update" class="login-button" style="margin-left: 130px;">
                     </form>
 
 
@@ -253,7 +253,7 @@
     </div>
 
     {% if user.is_authenticated %}
-            <a href="{% url 'ByteBusterApp:template1editor' %}" class="login-button get-code" id="get-code">Get Code</a>
+            <a href="{% url 'ByteBusterApp:template1editor' %}" class="login-button get-code" id="get-code" style="margin-left: 450px;">Get Code</a>
     {% endif %}
 
     </section>

@@ -4,8 +4,6 @@ from django.template.loader import render_to_string
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.http import FileResponse
-from ByteBusterApp.models import PricingTable
-
 from paypal.standard.forms import PayPalPaymentsForm
 from django.conf import settings
 import  uuid
@@ -101,40 +99,40 @@ def load_template(request, template_id):
     return HttpResponse(html)
 
 
-@login_required
-def save_zip_to_db(request):
-    if request.method == 'POST':
-        zip_file = request.FILES.get('zip_content')  # Assuming 'zip_content' is the field name
-        user = request.user  # Get the logged-in user
+# @login_required
+# def save_zip_to_db(request):
+#     if request.method == 'POST':
+#         zip_file = request.FILES.get('zip_content')  # Assuming 'zip_content' is the field name
+#         user = request.user  # Get the logged-in user
+#
+#         if zip_file:
+#             # Read the file as binary data
+#             zip_content = zip_file.read()
+#
+#             print(len(zip_content))
+#
+#             # Save zip_content to the database
+#             PricingTable.objects.create(user=user, zip_content=zip_content)
+#
+#             # Return success response
+#             return JsonResponse({'success': True})
+#
+#     return JsonResponse({'success': False})
 
-        if zip_file:
-            # Read the file as binary data
-            zip_content = zip_file.read()
 
-            print(len(zip_content))
-
-            # Save zip_content to the database
-            PricingTable.objects.create(user=user, zip_content=zip_content)
-
-            # Return success response
-            return JsonResponse({'success': True})
-
-    return JsonResponse({'success': False})
-
-
-@login_required
-def download_zip(request, id):  # Add 'id' parameter here
-    # Get the PricingTable object with the given id
-    pricing_table = PricingTable.objects.get(id=id)
-
-    # Convert the zip content to bytes
-    zip_content = bytes(pricing_table.zip_content)
-
-    # Create a FileResponse with the zip content
-    response = FileResponse(zip_content, as_attachment=True, filename='pricing_table.zip')
-
-    # Set the Content-Type header to 'application/zip'
-    response['Content-Type'] = 'application/zip'
-
-    return response
+# @login_required
+# def download_zip(request, id):  # Add 'id' parameter here
+#     # Get the PricingTable object with the given id
+#     pricing_table = PricingTable.objects.get(id=id)
+#
+#     # Convert the zip content to bytes
+#     zip_content = bytes(pricing_table.zip_content)
+#
+#     # Create a FileResponse with the zip content
+#     response = FileResponse(zip_content, as_attachment=True, filename='pricing_table.zip')
+#
+#     # Set the Content-Type header to 'application/zip'
+#     response['Content-Type'] = 'application/zip'
+#
+#     return response
 
