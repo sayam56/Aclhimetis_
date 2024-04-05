@@ -2,17 +2,21 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.template.loader import render_to_string
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
+from django.http import FileResponse
+from ByteBusterApp.models import PricingTable
+
 from paypal.standard.forms import PayPalPaymentsForm
 from django.conf import settings
 import  uuid
 from django.urls import reverse
-
 # Create your views here.
 
 # template_editor/views.py
 from django.shortcuts import render
 from django.template.loader import render_to_string
 from .forms import TemplateForm
+from .models import payment
 
 
 def edit_template(request):
@@ -22,10 +26,7 @@ def edit_template(request):
             template_content = form.cleaned_data['template_content']
             # Render the template with the updated content
             updated_template = render_to_string('template_editor.html', {'template_content': template_content})
-
-            # Generate embedded code
             embedded_code = f'<script>document.write(`{updated_template}`);</script>'
-
             return render(request, 'template_editor.html', {'form': form, 'embedded_code': embedded_code})
     else:
         form = TemplateForm()
@@ -33,7 +34,11 @@ def edit_template(request):
 
 
 def homepage(request):
-    return render(request, 'ByteBusterApp/homepage.html')
+    detail = ''
+    if(request.user):
+            detail = payment.objects.get(userid=request.user)
+
+    return render(request, 'ByteBusterApp/homepage.html' , {'detail': detail})
 
 def temp1(request):
     return render(request, 'ByteBusterApp/template1.html')
@@ -57,21 +62,30 @@ def temp3edit(request):
 def pricingpage(request):
     host = request.get_host()
     paypal_checkout = {
-        'bussiness': settings.PAYPAL_RECEIVER_EMAIL,
-        'amount': 50,
+        'business': settings.PAYPAL_RECEIVER_EMAIL,
+        'amount': 39.99,
         'invoice': uuid.uuid4(),
         'currency_code': 'CAD',
-        'notify_url': f"https://{host}:{reverse('paypal-ipn')}",
-        'return_url': f"https://{host}{reverse('ByteBusterApp:paymentsuccess')}",
-        'cancel_url': f"https://{host}{reverse('ByteBusterApp:paymentfailed')}",
+        'notify_url': f"http://{host}:{reverse('paypal-ipn')}",
+        'return_url': f"http://{host}{reverse('ByteBusterApp:paymentsuccess')}",
+        'cancel_url': f"http://{host}{reverse('ByteBusterApp:paymentfailed')}",
     }
 
     paypal_payment = PayPalPaymentsForm(initial=paypal_checkout)
 
     return render(request, 'ByteBusterApp/pricingpage.html',{'paypal_payment' : paypal_payment})
+    # Get the latest PricingTable object for the current user
+    pricing_table = PricingTable.objects.filter(user=request.user).latest('id')
+
+    return render(request, 'ByteBusterApp/pricingpage.html', {'pricing_table': pricing_table})
+
 
 @login_required
 def paymentsuccess(request):
+    payer_id = request.GET.get('PayerID', None)
+    paymentdone = payment.objects.get(userid = request.user)
+    paymentdone.paymentdone = True
+    paymentdone.save()
     return render(request, 'ByteBusterApp/paymentsuccess.html')
 
 @login_required
@@ -83,5 +97,41 @@ def load_template(request, template_id):
     html = render_to_string(template_name, request=request)
     return HttpResponse(html)
 
-def checkOut(request):
-     host = request.get_host()
+
+@login_required
+def save_zip_to_db(request):
+    if request.method == 'POST':
+        zip_file = request.FILES.get('zip_content')  # Assuming 'zip_content' is the field name
+        user = request.user  # Get the logged-in user
+
+        if zip_file:
+            # Read the file as binary data
+            zip_content = zip_file.read()
+
+            print(len(zip_content))
+
+            # Save zip_content to the database
+            PricingTable.objects.create(user=user, zip_content=zip_content)
+
+            # Return success response
+            return JsonResponse({'success': True})
+
+    return JsonResponse({'success': False})
+
+
+@login_required
+def download_zip(request, id):  # Add 'id' parameter here
+    # Get the PricingTable object with the given id
+    pricing_table = PricingTable.objects.get(id=id)
+
+    # Convert the zip content to bytes
+    zip_content = bytes(pricing_table.zip_content)
+
+    # Create a FileResponse with the zip content
+    response = FileResponse(zip_content, as_attachment=True, filename='pricing_table.zip')
+
+    # Set the Content-Type header to 'application/zip'
+    response['Content-Type'] = 'application/zip'
+
+    return response
+

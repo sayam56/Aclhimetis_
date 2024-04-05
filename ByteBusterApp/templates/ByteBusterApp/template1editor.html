@@ -5,11 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="csrf-token" content="{{ csrf_token }}">
     <title>{% block title %}Template 1{% endblock %}</title>
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-     <link rel="stylesheet" href="{% static 'style.css' %}">
+{#  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">#}
+{#  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">#}
+ <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+
+
 </head>
 
 {% block content %}
@@ -38,19 +42,19 @@
                 <form id="basic-form">
                     <h4>First Table</h4>
                     <label for="basic-title">Title:</label><br>
-                    <input type="text" id="basic-title" name="basic-title"><br>
+                    <input type="text" id="basic-title" name="basic-title" required><br>
                     <label for="basic-cost">Cost:</label><br>
-                    <input type="text" id="basic-cost" name="basic-cost"><br>
+                    <input type="text" id="basic-cost" name="basic-cost" required><br>
                     <label for="basic-feature1">Feature 1:</label><br>
-                    <input type="text" id="basic-feature1" name="basic-feature1"><br>
+                    <input type="text" id="basic-feature1" name="basic-feature1" required><br>
                     <label for="basic-feature2">Feature 2:</label><br>
-                    <input type="text" id="basic-feature2" name="basic-feature2"><br>
+                    <input type="text" id="basic-feature2" name="basic-feature2" required><br>
                     <label for="basic-feature3">Feature 3:</label><br>
-                    <input type="text" id="basic-feature3" name="basic-feature3"><br>
+                    <input type="text" id="basic-feature3" name="basic-feature3" required><br>
                     <label for="basic-feature4">Feature 4:</label><br>
-                    <input type="text" id="basic-feature4" name="basic-feature4"><br>
+                    <input type="text" id="basic-feature4" name="basic-feature4" required><br>
                     <label for="pricing-plan-purchase-btn">Button Text:</label><br>
-                    <input type="text" id="pricing-plan-purchase-btn" name="pricing-plan-purchase-btn"><br>
+                    <input type="text" id="pricing-plan-purchase-btn" name="pricing-plan-purchase-btn" required><br>
 
                     <input type="submit" value="Update" class="login-button">
                 </form>
@@ -59,19 +63,19 @@
                 <form id="pro-form">
                     <h4>Second Table</h4>
                     <label for="pro-title">Title:</label><br>
-                    <input type="text" id="pro-title" name="pro-title"><br>
+                    <input type="text" id="pro-title" name="pro-title" required><br>
                     <label for="pro-cost">Cost:</label><br>
-                    <input type="text" id="pro-cost" name="pro-cost"><br>
+                    <input type="text" id="pro-cost" name="pro-cost" required><br>
                     <label for="pro-feature1">Feature 1:</label><br>
-                    <input type="text" id="pro-feature1" name="pro-feature1"><br>
+                    <input type="text" id="pro-feature1" name="pro-feature1" required><br>
                     <label for="pro-feature2">Feature 2:</label><br>
-                    <input type="text" id="pro-feature2" name="pro-feature2"><br>
+                    <input type="text" id="pro-feature2" name="pro-feature2" required><br>
                     <label for="pro-feature3">Feature 3:</label><br>
-                    <input type="text" id="pro-feature3" name="pro-feature3"><br>
+                    <input type="text" id="pro-feature3" name="pro-feature3" required><br>
                     <label for="pro-feature4">Feature 4:</label><br>
-                    <input type="text" id="pro-feature4" name="pro-feature4"><br>
+                    <input type="text" id="pro-feature4" name="pro-feature4" required><br>
                     <label for="pro-button-text">Button Text:</label><br>
-                    <input type="text" id="pro-button-text" name="pro-button-text"><br>
+                    <input type="text" id="pro-button-text" name="pro-button-text" required><br>
 
                     <input type="submit" value="Update" class="login-button">
                 </form>
@@ -80,25 +84,24 @@
                 <form id="enterprise-form">
                     <h4>Third Table</h4>
                     <label for="enterprise-title">Title:</label><br>
-                    <input type="text" id="enterprise-title" name="enterprise-title"><br>
+                    <input type="text" id="enterprise-title" name="enterprise-title" required><br>
                     <label for="enterprise-cost">Cost:</label><br>
-                    <input type="text" id="enterprise-cost" name="enterprise-cost"><br>
+                    <input type="text" id="enterprise-cost" name="enterprise-cost" required><br>
                     <label for="enterprise-feature1">Feature 1:</label><br>
-                    <input type="text" id="enterprise-feature1" name="enterprise-feature1"><br>
+                    <input type="text" id="enterprise-feature1" name="enterprise-feature1" required><br>
                     <label for="enterprise-feature2">Feature 2:</label><br>
-                    <input type="text" id="enterprise-feature2" name="enterprise-feature2"><br>
+                    <input type="text" id="enterprise-feature2" name="enterprise-feature2" required><br>
                     <label for="enterprise-feature3">Feature 3:</label><br>
-                    <input type="text" id="enterprise-feature3" name="enterprise-feature3"><br>
+                    <input type="text" id="enterprise-feature3" name="enterprise-feature3" required><br>
                     <label for="enterprise-feature4">Feature 4:</label><br>
-                    <input type="text" id="enterprise-feature4" name="enterprise-feature4"><br>
+                    <input type="text" id="enterprise-feature4" name="enterprise-feature4" required><br>
                     <label for="enterprise-button-text">Button Text:</label><br>
-                    <input type="text" id="enterprise-button-text" name="enterprise-button-text"><br>
+                    <input type="text" id="enterprise-button-text" name="enterprise-button-text" required><br>
 
 
                     <input type="submit" value="Update" class="login-button">
                 </form>
             </div>
-
             <div class="table-container">
                   <h5 class="text-center pricing-table-subtitle"></h5>
                   <h1 class="text-center pricing-table-title">Pricing Table</h1>
@@ -152,13 +155,17 @@
                       </div>
                     </div>
                   </div>
-
             </div>
         </div>
-        <a href="{% url 'ByteBusterApp:pricingpage' %}" class="login-button get-code" id="get-code">Get Code</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'ByteBusterApp:template1editor' %}" class="login-button get-code" id="get-code">Get Code</a>
+        {% else %}
+            <a href="{% url 'login' %}" class="login-button get-code">Login</a>
+        {% endif %}
 
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <script type="text/javascript" src="{% static 'editor.js' %}"></script>
+    <script type="text/javascript" src="{% static 'generateCode.js' %}"></script>
 
 {% endblock %}

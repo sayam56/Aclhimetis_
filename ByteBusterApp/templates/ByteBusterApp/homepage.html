@@ -54,9 +54,15 @@
               <img src="{% static 'images/img3.png' %}" alt="Image 3" class="image-content">
               <p class="image-name">Template 3</p>
           </div>
-
-          <button class="continue-button">Continue</button>
-            {{ paypal_payment.render }}
+        {% if user.is_authenticated %}
+           {% if detail.paymentdone %}
+               <button class="continue-button">Continue</button>
+            {% else %}
+                <a href="{% url 'ByteBusterApp:pricingpage' %}" class="continue-button">Continue</a>
+            {% endif %}
+        {% else %}
+         <button class="continue-button">Continue</button>
+        {% endif %}
         </div>
       </div>
     <script type="text/javascript" src="{% static 'selected.js' %}"></script>
