@@ -7,7 +7,9 @@
 
     <nav class="navbar">
         <div class="logo">
-            <img src="{% static 'images/logo.png' %}" alt="Bytebuster Logo">
+            <a href="{% url 'ByteBusterApp:homepage' %}">
+                <img src="{% static 'images/logo.png' %}" alt="Bytebuster Logo">
+            </a>
         </div>
 
         {% if user.is_authenticated %}
@@ -54,12 +56,17 @@
               <img src="{% static 'images/img3.png' %}" alt="Image 3" class="image-content">
               <p class="image-name">Template 3</p>
           </div>
-
-          <button class="continue-button">Continue</button>
-
+        {% if user.is_authenticated %}
+           {% if detail.paymentdone %}
+               <button class="continue-button">Continue</button>
+            {% else %}
+                <a href="{% url 'ByteBusterApp:pricingpage' %}" class="continue-button login-button" id="homepage_continue_button">Continue</a>
+            {% endif %}
+        {% else %}
+            <button class="continue-button">Continue</button>
+        {% endif %}
         </div>
       </div>
-
     <script type="text/javascript" src="{% static 'selected.js' %}"></script>
 
 {% endblock %}
